@@ -3,3 +3,4 @@
 
 # DEMO
 https://yuki-sakaguchi.github.io/vue-introduction/part01/index.html
+https://yuki-sakaguchi.github.io/vue-introduction/part02/index.html
