@@ -3,7 +3,7 @@
  *    props と event
  *      親コンポーネントから子コンポーネントに値を渡すにはprops
  *      子コンポーネントから親コンポーネントに値を渡すにはevent
- **/
+ */
 
 // 子コンポーネントから親コンポーネントに値を渡すにはevent
 var counterButton = Vue.extend({

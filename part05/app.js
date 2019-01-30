@@ -7,7 +7,7 @@
  * 
  *    基本的にはpropsとeventで対応すること。
  *    どうしても対応できない場合のみ、これらを使う
- **/
+ */
 
 // $parent
 Vue.component('fruits-name', {

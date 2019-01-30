@@ -1,3 +1,6 @@
+/**
+ * Vue基本
+ */
 var items = [
   {
     name: '鉛筆',
