@@ -9,12 +9,12 @@
   <body>
 
     <!-- マウント -->
-    <div id="fruits-component">
-      <div v-for="fruit in fruitsItems" :key="fruit.name">
-        <fruits-item-name :fruits-item="fruit"></fruits-item-name>
-        <counter-button v-on:increment="incrementCartStates()"></counter-button>
-      </div>
-      <div>合計：{{ total }}</div>
+    <div id="fruits-container">
+      <fruits-name></fruits-name>
+    </div>
+
+    <div id="fruits-container-2">
+      <counter-button ref="counter"></counter-button>
     </div>
 
     <!-- vueアプリケーション -->

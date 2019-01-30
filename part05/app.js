@@ -1,52 +1,52 @@
 /**
  * Vueコンポーネント
- *    props と event
- *      親コンポーネントから子コンポーネントに値を渡すにはprops
- *      子コンポーネントから親コンポーネントに値を渡すにはevent
+ *    propsとevent以外のアクセス
+ *      $parent
+ *      $children
+ *      $refs
+ * 
+ *    基本的にはpropsとeventで対応すること。
+ *    どうしても対応できない場合のみ、これらを使う
  **/
 
-// 子コンポーネントから親コンポーネントに値を渡すにはevent
-var counterButton = Vue.extend({
-  template: '<span>{{ count }}個<button v-on:click="addToCart">追加</button></span>',
+// $parent
+Vue.component('fruits-name', {
+  template: '<p>{{ this.$parent.fruits[0].name }}</p>',
   data () {
     return {
-      count: 0,
-    }
-  },
-  methods: {
-    addToCart () {
-      this.count++
-      this.$emit('increment') // incrementカスタムイベントを発火
-    }
-  }
-})
-
-// 親コンポーネントから子コンポーネントに値を渡すにはprops
-Vue.component('fruits-item-name', {
-  template: '<div>{{ fruitsItem.name }}</div>',
-  props: {
-    fruitsItem: { // テンプレートではケバブケース、HTMLはハイフンつなぎ
-      type: Object, // 型
-      required: true, // 必須
+      counter: 1,
     }
   }
 })
 
 new Vue({
-  el: '#fruits-component',
-  components: {
-    'counter-button': counterButton,
-  },
+  el: '#fruits-container',
   data: {
-    total: 0,
-    fruitsItems: [
+    fruits: [
       { name: 'いちご' },
       { name: 'ぶどう' },
     ]
   },
-  methods: {
-    incrementCartStates () {
-      this.total += 1
+  mounted () {
+    // $children
+    console.log('子コンポーネントから$children取得した値：' + this.$children[0].counter)
+  }
+})
+
+
+// $refs
+Vue.component('counter-button', {
+  template: '<p>いちご</p>',
+  data () {
+    return {
+      count: 1,
     }
+  }
+})
+
+var parent = new Vue({
+  el: '#fruits-container-2',
+  mounted () {
+    console.log('子コンポーネントから$refsで取得した値：' + this.$refs.counter.count)
   }
 })
