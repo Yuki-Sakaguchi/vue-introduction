@@ -5,3 +5,4 @@
 * [part01](https://yuki-sakaguchi.github.io/vue-introduction/part01/index.html)
 * [part02](https://yuki-sakaguchi.github.io/vue-introduction/part02/index.html)
 * [part03](https://yuki-sakaguchi.github.io/vue-introduction/part03/index.html)
+* [part04](https://yuki-sakaguchi.github.io/vue-introduction/part04/index.html)

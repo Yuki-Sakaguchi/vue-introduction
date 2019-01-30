@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue introduction - part03</title>
+  </head>
+  <body>
+
+    <!-- マウント -->
+    <div id="fruits-component">
+      <div v-for="fruit in fruitsItems" :key="fruit.name">
+        <fruits-item-name :fruits-item="fruit"></fruits-item-name>
+        <counter-button v-on:increment="incrementCartStates()"></counter-button>
+      </div>
+      <div>合計：{{ total }}</div>
+    </div>
+
+    <!-- vueアプリケーション -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+    <script src="app.js"></script>
+
+  </body>
+</html>

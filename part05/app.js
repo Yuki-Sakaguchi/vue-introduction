@@ -23,7 +23,7 @@ var counterButton = Vue.extend({
 
 // 親コンポーネントから子コンポーネントに値を渡すにはprops
 Vue.component('fruits-item-name', {
-  template: '<span>{{ fruitsItem.name }}</span>',
+  template: '<div>{{ fruitsItem.name }}</div>',
   props: {
     fruitsItem: { // テンプレートではケバブケース、HTMLはハイフンつなぎ
       type: Object, // 型
