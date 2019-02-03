@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue introduction - part07</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <style>
+      input[type="text"] {
+        border: 1px solid;
+        margin: 10px;
+      }
+      button {
+        margin: 10px;
+        background-color: black;
+        color: white;
+        padding: 7px 18px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="login-example">
+      <user-login></user-login>
+    </div>
+
+    <script type="text/x-template" id="login-template">
+      <div id="login-template">
+        <div>
+          <input type="text" placeholder="ログインID" v-model="userid">
+        </div>
+        <div>
+          <input type="text" placeholder="パスワード" v-model="password">
+        </div>
+        <button @click="login">ログイン</button>
+      </div>
+    </script>
+
+    <!-- vueアプリケーション -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+    <script src="app.js"></script>
+
+  </body>
+</html>

@@ -7,3 +7,6 @@
 * [part03 - ローカルコンポーネント](https://yuki-sakaguchi.github.io/vue-introduction/part03/index.html)
 * [part04 - 親から子へ、子から親への値を渡す](https://yuki-sakaguchi.github.io/vue-introduction/part04/index.html)
 * [part05 - 親から子へ、子から親への値を渡す（パターン２）](https://yuki-sakaguchi.github.io/vue-introduction/part05/index.html)
+* [part06 - 実践的なコンポーネント](https://yuki-sakaguchi.github.io/vue-introduction/part06/index.html)
+* [part07 - 実践的なコンポーネント（パターン２）](https://yuki-sakaguchi.github.io/vue-introduction/part07/index.html)
+* [part08 - ルーティング](https://yuki-sakaguchi.github.io/vue-introduction/part08/index.html)
