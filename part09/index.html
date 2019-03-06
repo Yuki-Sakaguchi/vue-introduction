@@ -1,0 +1,63 @@
+<!--
+  transition
+-->
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue introduction - part09</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <style>
+      .v-enter-active {
+         /* フェードイン時のアニメーションの時間、イージングなどを設定 */
+         transition: opacity 0.5s ease-out;
+      }
+      .v-enter {
+        /* フェードインの初期状態 */
+        opacity: 0;
+      }
+      .v-enter-to {
+        /* フェードインの終了状態 */
+        opacity: 1;
+      }
+      .v-leave-active {
+        /* フェードアウト時のアニメーションの時間、イージングなどを設定 */
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+      }
+      .v-leave {
+        /* フェードアウトの初期状態 */
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .v-leave-to {
+        /* フェードアウトの終了状態 */
+        opacity: 0;
+        transform: translateX(100px);
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="app">
+      <button @click="isShown = !isShown">表示の切り替え</button>
+      <transition>
+        <p v-show="isShown">Hello world!</p>
+      </transition>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data() {
+          return {
+            isShown: false,
+          }
+        }
+      })
+    </script>
+
+  </body>
+</html>

@@ -10,3 +10,7 @@
 * [part06 - 実践的なコンポーネント](https://yuki-sakaguchi.github.io/vue-introduction/part06/index.html)
 * [part07 - 実践的なコンポーネント（パターン２）](https://yuki-sakaguchi.github.io/vue-introduction/part07/index.html)
 * [part08 - ルーティング](https://yuki-sakaguchi.github.io/vue-introduction/part08/index.html)
+* [part09 - transitionのアニメーション](https://yuki-sakaguchi.github.io/vue-introduction/part09/index.html)
+* [part10 - transition + animate.css](https://yuki-sakaguchi.github.io/vue-introduction/part10/index.html)
+* [part11 - transition + anime.js](https://yuki-sakaguchi.github.io/vue-introduction/part11/index.html)
+
