@@ -78,6 +78,9 @@
             ]
           }
         },
+        // :css="false" を指定することでイベントの終了をjsで検知することができる。
+        // この指定がないと、transitionend, animationendのタイミングで次のイベントに移る
+        // これがあることで第２引数のdoneで次のアニメーションへ進める
         template: `
           <div @mouseleave="isShown = false">
             <p @mouseover="isShown = true">

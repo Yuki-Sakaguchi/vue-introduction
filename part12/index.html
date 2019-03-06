@@ -1,0 +1,48 @@
+<!--
+  スロット（単一スロット）
+    他には「名前付きスロット」がある
+-->
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue introduction - part11</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <style>
+      button {
+        background: #ccc;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="app">
+      <!-- コンテンツありでコンポーネントを設置する -->
+      <my-button>送信する</my-button>
+      <!-- コンテンツなしでコンポーネントを設置する -->
+      <my-button></my-button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+    <script>
+      var MyButton = {
+        template: `
+          <button>
+            <slot>OK</slot> <!-- 親コンポーネントで渡されたコンテンツに差し代わる -->
+          </button>
+        `
+      }
+
+      new Vue({
+        el: '#app',
+        components: {
+          MyButton: MyButton
+        }
+      })
+    </script>
+
+  </body>
+</html>

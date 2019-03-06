@@ -13,4 +13,7 @@
 * [part09 - transitionのアニメーション](https://yuki-sakaguchi.github.io/vue-introduction/part09/index.html)
 * [part10 - transition + animate.css](https://yuki-sakaguchi.github.io/vue-introduction/part10/index.html)
 * [part11 - transition + anime.js](https://yuki-sakaguchi.github.io/vue-introduction/part11/index.html)
+* [part12 - slot（単一slot）](https://yuki-sakaguchi.github.io/vue-introduction/part12/index.html)
+* [part13 - slot（名前付きslot）](https://yuki-sakaguchi.github.io/vue-introduction/part13/index.html)
+* [part14 - slot（スコープ付きslot）](https://yuki-sakaguchi.github.io/vue-introduction/part14/index.html)
 
