@@ -1,5 +1,15 @@
 <!--
-  スロット（スコープ付きスロット）
+  カスタムディレクティブ
+    v-if, v-for, v-on, v-modelなどのディレクティブのようなものを自作する
+    グローバルとローカルの２つあり、前者はアプリケーション全体、後者はコンポーネントだけで仕様ができる
+    グローバルで使うことが多いみたい
+
+    Vue.directive([ディレクティブ名], [ディレクティブ定義オブジェクト])
+      bind -> 対象の要素が紐づいたときに１度だけ呼ばれる。初回セットアップなど
+      inserted -> 要素が親要素に挿入された時に呼ばれる
+      update -> ディレクティブの値が変化したときに呼ばれる。値が変更していなくても呼ばれる時があるので、値のチェックで回避する
+      componentUpdated -> コンポーネントと子コンポーネントのVNodeが更新されたとき
+      unbind -> 要素から取り除かれた時に呼ばれる
 -->
 <!DOCTYPE html>
 <html lang="ja">
@@ -7,53 +17,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Vue introduction - part11</title>
+    <title>Vue introduction - part14</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
   </head>
   <body>
 
     <div id="app">
-      <todo-list :todos="todos">
-        <li slot-scope="{ todo }" v-if="todo.isCompleted" :key="todo.id">{{ todo.text }}</li>
-      </todo-list>
+      <img v-fallback-image src="abcde"><!-- 存在しない画像なので読み込み時にエラーが出る -->
+      <img v-fallback-image src="images/logo.png">
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
     <script>
-      var TodoList = {
-        props: {
-          todos: {
-            type: Array,
-            required: true,
-          }
-        },
-        template: `
-          <ul>
-            <template v-for="todo in todos">
-              <!-- v-bindディレクティブでtodoを親コンポーネントに渡す -->
-              <slot :todo="todo">
-                <li :key="todo.id">{{ todo.text }}</li>
-              </slot>
-            </template>
-          </ul>
-        `
-      }
+      Vue.directive('fallback-image', {
+        bind (el) {
+          el.addEventListener('error', function () {
+            el.src = 'images/no_image.png'
+          })
+        }
+      });
 
       new Vue({
-        el: '#app',
-        data () {
-          return {
-            todos: [
-              { id: 1, text: 'C++', isCompleted: true },
-              { id: 2, text: 'JavaScript', isCompleted: false },
-              { id: 3, text: 'Java', isCompleted: true },
-              { id: 4, text: 'Perl', isCompleted: true },
-            ]
-          }
-        },
-        components: {
-          TodoList: TodoList,
-        }
+        el: '#app'
       })
     </script>
 
