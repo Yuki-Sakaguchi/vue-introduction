@@ -16,4 +16,4 @@
 * [part12 - slot（単一slot）](https://yuki-sakaguchi.github.io/vue-introduction/part12/index.html)
 * [part13 - slot（名前付きslot）](https://yuki-sakaguchi.github.io/vue-introduction/part13/index.html)
 * [part14 - slot（スコープ付きslot）](https://yuki-sakaguchi.github.io/vue-introduction/part14/index.html)
-
+* [part15 - カスタムディレクティブ](https://yuki-sakaguchi.github.io/vue-introduction/part15/index.html)
